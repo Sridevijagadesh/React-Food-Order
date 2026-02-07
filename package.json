@@ -1,0 +1,25 @@
+{
+  "name": "react-food-oder",
+  "version": "1.0.0",
+  "description": "\"learning from namaste React\"",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sridevijagadesh/React-Food-Order.git"
+  },
+  "author": "\"SRIDEVI\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sridevijagadesh/React-Food-Order/issues"
+  },
+  "homepage": "https://github.com/Sridevijagadesh/React-Food-Order#readme",
+  "dependencies": {
+    "parcel": "^2.16.4",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}

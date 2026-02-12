@@ -3,11 +3,15 @@ import React from "react";
 
 const RestarturatCard = (props) => {
   const { resdata } = props;
-  const { name, description, category, imageId, rating, price } = resdata.info;
+  const { name, description, category, cloudinaryImageId, rating, price } =
+    resdata.info;
   return (
     <>
       <div className="card-container">
-        <img src={"https://media-assets.swiggy.com/" + imageId} width={200} />
+        <img
+          src={"https://media-assets.swiggy.com/" + cloudinaryImageId}
+          width={200}
+        />
         <div className="card-body">
           <h2 className="card-name">{name}</h2>
           <h3 className="card-Category">{category}</h3>

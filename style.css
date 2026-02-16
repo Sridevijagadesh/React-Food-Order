@@ -48,3 +48,35 @@
   font-style: italic;
   color: #555;
 }
+.filter {
+  margin-bottom: 20px;
+}
+.filter button {
+  margin-bottom: 20px;
+  padding: 5px 30px;
+  background-color: rgb(116, 116, 10);
+  border: none;
+  color: rgb(211, 130, 16);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.shimming-box {
+  background-color: #dad5d5;
+  width: 250px;
+  height: 400px;
+}
+.Shimming-Container {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+.Login-btn {
+  padding: 5px 10px;
+  font-style: italic;
+  font-weight: bold;
+}

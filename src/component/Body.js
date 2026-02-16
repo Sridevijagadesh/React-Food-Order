@@ -1,5 +1,6 @@
 import RestarturatCard from "./RestarturatCard";
 import React, { useEffect } from "react";
+import Shimming from "./Shimming";
 
 import resList from "../utils/Data";
 
@@ -8,30 +9,35 @@ const Body = () => {
 
   useEffect(() => {
     FetchData();
-  }, [20000]);
+  }, []);
 
   const FetchData = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7041&lng=77.1025&page_type=DESKTOP_WEB_LISTING%22",
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7041&lng=77.1025&page_type=DESKTOP_WEB_LISTING",
     );
 
-    const Json = await data.json();
-    console.log(Json);
+    const json = await data.json();
+    console.log(json);
     // update the state variable
     setResdata(
-      Json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants,
     );
   };
-  if (resData.length === 0) {
-    return <h1>loading......</h1>;
-  }
-  return (
+  //condintional rending
+  // if (resData.length === 0) {
+  //   return <Shimming />;
+  // }
+  return resData.length === 0 ? (
+    <Shimming />
+  ) : (
     <>
       <div className="filter">
         <button
           onClick={() => {
-            const FilterBtn = resList.filter((res) => res.info.rating < 4);
+            const FilterBtn = resList.filter((res) =>
+              Number(res.data.avgRating < 4.5),
+            );
             setResdata(FilterBtn);
           }}
         >

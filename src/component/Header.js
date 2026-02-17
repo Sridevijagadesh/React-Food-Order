@@ -4,6 +4,20 @@ import { Logo_URL } from "../utils/contants";
 const Header = () => {
   const [btnName, setBtnName] = useState("login");
 
+  //style login button
+  const Login = {
+    border: "none",
+    padding: "7px 20px ",
+    background: "green",
+    color: "white",
+  };
+  const Logout = {
+    border: "none",
+    padding: "7px 20px ",
+    background: "yellow",
+    color: "#000",
+  };
+
   const handleEvent = () => {
     if (btnName === "login") {
       setBtnName("logout");
@@ -28,8 +42,7 @@ const Header = () => {
               onClick={() =>
                 btnName === "login" ? setBtnName("logout") : setBtnName("login")
               }
-              style={{ background: btnName === "login" ? "  green" : "yellow" }}
-              className="Login-btn"
+              style={btnName === "login" ? Login : Logout}
             >
               {btnName}
             </button>

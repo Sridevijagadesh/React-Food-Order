@@ -6,6 +6,7 @@ import resList from "../utils/Data";
 
 const Body = () => {
   const [resData, setResdata] = React.useState([]);
+  const [search, setSearch] = React.useState("");
 
   useEffect(() => {
     FetchData();
@@ -33,11 +34,34 @@ const Body = () => {
   ) : (
     <>
       <div className="filter">
+        <label>
+          <input
+            style={{ padding: "7px 10px" }}
+            type="text"
+            placeholder="search"
+            className="search-bar"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              const filterData = resData.filter((res) =>
+                res.info.name.includes(search),
+              );
+              setResdata(filterData);
+            }}
+          >
+            search
+          </button>
+        </label>
         <button
           onClick={() => {
-            const FilterBtn = resList.filter((res) =>
-              Number(res.data.avgRating < 4.5),
-            );
+            const FilterBtn = resData.filter((res) => {
+              const rating = parseFloat(res?.info?.avgRatingString);
+              return !isNaN(rating) && rating > 4.5;
+            });
             setResdata(FilterBtn);
           }}
         >

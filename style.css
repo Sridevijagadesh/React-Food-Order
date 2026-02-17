@@ -54,15 +54,16 @@
 .filter button {
   margin-bottom: 20px;
   padding: 5px 30px;
-  background-color: rgb(116, 116, 10);
+
   border: none;
-  color: rgb(211, 130, 16);
-  font-size: 1.5rem;
+
+  font-size: 1.2rem;
   text-transform: uppercase;
   font-style: italic;
-  font-weight: bold;
+
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 10px;
 }
 .shimming-box {
   background-color: #dad5d5;

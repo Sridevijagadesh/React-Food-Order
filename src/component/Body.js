@@ -1,11 +1,12 @@
 import RestarturatCard from "./RestarturatCard";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Shimming from "./Shimming";
 
 import resList from "../utils/Data";
 
 const Body = () => {
   const [resData, setResdata] = React.useState([]);
+  const [filterRestroList, setFilterRestroList] = useState([]);
   const [search, setSearch] = React.useState("");
 
   useEffect(() => {
@@ -24,11 +25,16 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants,
     );
+    setFilterRestroList(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
+    );
   };
   //condintional rending
   // if (resData.length === 0) {
   //   return <Shimming />;
   // }
+
   return resData.length === 0 ? (
     <Shimming />
   ) : (
@@ -48,9 +54,9 @@ const Body = () => {
           <button
             onClick={() => {
               const filterData = resData.filter((res) =>
-                res.info.name.includes(search),
+                res.info.name.toLowerCase().includes(search.toLowerCase()),
               );
-              setResdata(filterData);
+              setFilterRestroList(filterData);
             }}
           >
             search
@@ -69,7 +75,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-Container">
-        {resData.map((res) => {
+        {filterRestroList.map((res) => {
           return <RestarturatCard resdata={res} key={res.info.id} />;
         })}
       </div>

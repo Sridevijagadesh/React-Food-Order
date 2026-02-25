@@ -1,5 +1,6 @@
 import ResList from "../utils/Data";
 import React from "react";
+import { Image_URL } from "../utils/contants";
 
 const RestarturatCard = (props) => {
   const { resdata } = props;
@@ -14,10 +15,7 @@ const RestarturatCard = (props) => {
   return (
     <>
       <div className="card-container">
-        <img
-          src={"https://media-assets.swiggy.com/" + cloudinaryImageId}
-          width={200}
-        />
+        <img src={Image_URL + cloudinaryImageId} width={200} />
         <div className="card-body">
           <h2 className="card-name">{name}</h2>
           <h3 className="card-Category">{cuisines?.join(", ")}</h3>

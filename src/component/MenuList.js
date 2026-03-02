@@ -31,27 +31,35 @@ const menuList = () => {
 
   return (
     <>
-      <h1>I am from menu card</h1>
       <h1>{restaurantInfo.name}</h1>
-      <div className="resMenu-Container">
-        <div className="resMenu-title">
-          <h1>Recommended{restaurantItemCard.length}</h1>
-        </div>
-
-        {restaurantItemCard.map((item) => {
-          return (
-            <>
-              <div className="resMenu-Description">
-                <li key={item.card.info.id}>
-                  {item.card.info.name} - {item.card.info.price}
-                </li>
-
-                <img src={Menu_Image_URL + item.card.info.imageId} />
-              </div>
-            </>
-          );
-        })}
+      <div className="resMenu-title">
+        <h1>Recommended ({restaurantItemCard.length})</h1>
       </div>
+
+      {restaurantItemCard.map((item) => {
+        return (
+          <>
+            <div className="resMenu-Description" key={item.card.info.id}>
+              <div className="resMenu-container">
+                <div className="resMenu-Content">
+                  <li>
+                    {item.card.info.name} - {item.card.info.price}
+                  </li>
+                  <h4>{item.card.info.description}</h4>
+                  <h4>{item.card.info.category}</h4>
+                </div>
+                <div className="resMenu-image">
+                  <img
+                    src={Menu_Image_URL + item.card.info.imageId}
+                    width={200}
+                    height={186}
+                  />
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      })}
     </>
   );
 };

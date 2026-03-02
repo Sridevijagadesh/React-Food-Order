@@ -81,3 +81,35 @@
   font-style: italic;
   font-weight: bold;
 }
+
+.resMenu-Description {
+  display: flex;
+  margin: auto;
+  width: 800px;
+  height: auto;
+  border-bottom: 1px solid grey;
+  justify-content: space-between;
+  gap: 20px;
+}
+.resMenu-container {
+  width: 789px;
+  height: 182px;
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.resMenu-Content li {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  list-style: none;
+}
+.resMenu-image {
+  margin-top: 10px;
+}
+.resMenu-title {
+  margin: auto;
+  width: 800px;
+}

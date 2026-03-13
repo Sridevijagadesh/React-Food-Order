@@ -20,7 +20,7 @@ const AppRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <Error />, // parent router
+    // parent router
     children: [
       // child router
       {
@@ -37,6 +37,7 @@ const AppRouter = createBrowserRouter([
       },
       { path: "/restarturat/:resId", element: <MenuList /> },
     ],
+    errorElement: <Error />,
   },
 ]);
 

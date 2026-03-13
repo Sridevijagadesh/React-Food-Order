@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Shimming from "./Shimming";
 
 import resList from "../utils/Data";
+import { Link } from "react-router";
 
 const Body = () => {
   const [resData, setResdata] = React.useState([]);
@@ -76,7 +77,15 @@ const Body = () => {
       </div>
       <div className="res-Container">
         {filterRestroList.map((res) => {
-          return <RestarturatCard resdata={res} key={res.info.id} />;
+          return (
+            <Link
+              key={res.info.id}
+              to={"restarturat/" + res.info.id}
+              className="resCardLink"
+            >
+              <RestarturatCard resdata={res} />
+            </Link>
+          );
         })}
       </div>
     </>

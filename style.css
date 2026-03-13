@@ -113,3 +113,27 @@
   margin: auto;
   width: 800px;
 }
+.Filter-Button,
+.resMenu-Name {
+  display: flex;
+
+  margin: auto;
+  width: 830px;
+}
+.Nonveg-Button,
+.veg-Button {
+  padding: 10px 20px;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  background: "#f5f5f5";
+  border-radius: 20px;
+  font-style: italic;
+  font-weight: bold;
+}
+.resCardLink {
+  text-decoration: none;
+}
+.resCardLink:active {
+  color: #555;
+}

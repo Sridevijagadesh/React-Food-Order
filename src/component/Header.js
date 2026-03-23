@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router";
 
 import { Logo_URL } from "../utils/contants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
   const [btnName, setBtnName] = useState("login");
 
@@ -19,13 +20,7 @@ const Header = () => {
     color: "#000",
   };
 
-  const handleEvent = () => {
-    if (btnName === "login") {
-      setBtnName("logout");
-    } else {
-      setBtnName("login");
-    }
-  };
+  const onlineStatus = useOnlineStatus();
   return (
     <>
       <div className="header">
@@ -34,6 +29,7 @@ const Header = () => {
         </div>
         <div className="nav-items">
           <ul>
+            <li>onlineStatus :{onlineStatus === true ? "🟢" : "🔴"}</li>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -41,8 +37,10 @@ const Header = () => {
               <Link to="/about"> About Us</Link>
             </li>
             <li>
-              {" "}
               <Link to="/contact">Contact Us</Link>
+            </li>
+            <li>
+              <Link to="/grocery">Grocery</Link>
             </li>
             <li>Cart</li>
 

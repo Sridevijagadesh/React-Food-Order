@@ -1,9 +1,9 @@
 import RestarturatCard from "./RestarturatCard";
 import React, { useEffect, useState } from "react";
 import Shimming from "./Shimming";
-
-import resList from "../utils/Data";
 import { Link } from "react-router";
+import { Body_URL } from "../utils/contants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [resData, setResdata] = React.useState([]);
@@ -15,9 +15,7 @@ const Body = () => {
   }, []);
 
   const FetchData = async () => {
-    const data = await fetch(
-      "https://proxy.corsfix.com/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
-    );
+    const data = await fetch(Body_URL);
 
     const json = await data.json();
     console.log(json);
@@ -35,6 +33,10 @@ const Body = () => {
   // if (resData.length === 0) {
   //   return <Shimming />;
   // }
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false)
+    return <h1>your interent is slow please check on the internet</h1>;
 
   return resData.length === 0 ? (
     <Shimming />

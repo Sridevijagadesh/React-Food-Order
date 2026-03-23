@@ -3,24 +3,17 @@ import { Menu_Image_URL } from "../utils/contants";
 import Shimming from "./Shimming";
 import { useParams } from "react-router";
 import { Menu_URL } from "../utils/contants";
+import useMenuCustomHook from "../utils/useMenuCustomHook";
 
 const menuList = () => {
-  const [resInfo, setResInfo] = useState(null);
   const [filterInfo, setFilterInfo] = useState(null);
 
   // const [showItems, setShowItems] = useState(false);
   const { resId } = useParams();
   console.log(resId);
 
-  useEffect(() => {
-    FetchMenu();
-  }, []);
+  const resInfo = useMenuCustomHook(resId);
 
-  const FetchMenu = async () => {
-    const Menudata = await fetch(Menu_URL + resId);
-    const json = await Menudata.json();
-    setResInfo(json.data);
-  };
   //Name of the Res
   const restaurantInfo = resInfo?.cards[2]?.card?.card?.info;
   console.log(restaurantInfo);

@@ -6,7 +6,6 @@
 .nav-items > ul {
   display: flex;
   gap: 20px;
-  width: 500px;
 
   justify-content: space-around;
 }
@@ -136,4 +135,7 @@
 }
 .resCardLink:active {
   color: #555;
+}
+.internal {
+  color: red;
 }

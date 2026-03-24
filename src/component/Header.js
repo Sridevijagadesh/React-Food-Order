@@ -23,9 +23,9 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
   return (
     <>
-      <div className="header">
+      <div className="flex">
         <div className="logo">
-          <img src={Logo_URL} alt="logo" width={100} />
+          <img className="w-56" src={Logo_URL} alt="logo" />
         </div>
         <div className="nav-items">
           <ul>

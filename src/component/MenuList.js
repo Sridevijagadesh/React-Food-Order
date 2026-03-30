@@ -44,15 +44,6 @@ const menuList = () => {
         }}
       >
         <h1>Recommended ({restaurantItemCard?.length})</h1>
-        {/* <span
-          style={{
-            transform: showItems ? "rotate(180deg)" : "rotate(0deg)",
-            transition: "0.3s",
-            fontSize: "18px",
-          }}
-        >
-          ▲
-        </span> */}
       </div>
       <div className="Filter-Button">
         <div>
@@ -89,7 +80,7 @@ const menuList = () => {
       {itemToRender.map((item) => {
         return (
           <>
-            <div key={item?.card?.info?.id} className="resMenu-Description">
+            <div key={item?.card?.info?.id}>
               <div className="resMenu-container">
                 <div className="resMenu-Content">
                   <h2>{item?.card?.info?.name}</h2>

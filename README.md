@@ -36,3 +36,8 @@ Life cycle of react
 ---suspended componenet
 ---> use suspended compentent with props called fallback as the function
 An essential element of React Suspense is the Suspense component. It lets you declare how to handle fallback content while asynchronous actions are pending and encapsulate any portion of your component tree.
+
+chapater 10
+Tawilwind CSS - website
+-npm run tawilwincss postcss
+.postcss puligin

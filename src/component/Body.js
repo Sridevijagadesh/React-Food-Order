@@ -1,4 +1,4 @@
-import RestarturatCard from "./RestarturatCard";
+import RestarturatCard, { withPromotedCard } from "./RestarturatCard";
 import React, { useEffect, useState } from "react";
 import Shimming from "./Shimming";
 import { Link } from "react-router";
@@ -9,6 +9,8 @@ const Body = () => {
   const [resData, setResdata] = React.useState([]);
   const [filterRestroList, setFilterRestroList] = useState([]);
   const [search, setSearch] = React.useState("");
+  console.log(resData);
+  const ResPromotedCard = withPromotedCard(RestarturatCard);
 
   useEffect(() => {
     FetchData();
@@ -48,13 +50,14 @@ const Body = () => {
             style={{ padding: "7px 10px" }}
             type="text"
             placeholder="search"
-            className="search-bar"
+            className="border-0"
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
             }}
           />
           <button
+            className="bg-amber-200 pa px-10 mx-20 my-5  font-bold "
             onClick={() => {
               const filterData = resData.filter((res) =>
                 res.info.name.toLowerCase().includes(search.toLowerCase()),
@@ -66,6 +69,7 @@ const Body = () => {
           </button>
         </label>
         <button
+          className="bg-green-300 px-10  font-bold "
           onClick={() => {
             const FilterBtn = filterRestroList.filter((res) => {
               const rating = parseFloat(res?.info?.avgRatingString);
@@ -77,7 +81,7 @@ const Body = () => {
           filter
         </button>
       </div>
-      <div className="res-Container">
+      <div className="flex flex-wrap gap-5 items-center mt-1.5 ">
         {filterRestroList.map((res) => {
           return (
             <Link

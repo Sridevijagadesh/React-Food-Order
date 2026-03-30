@@ -1,16 +1,16 @@
 const Shimming = () => {
   return (
     <>
-      <div className="Shimming-Container">
-        <div className="shimming-box"></div>
-        <div className="shimming-box"></div>
-        <div className="shimming-box"></div>
-        <div className="shimming-box"></div>
-        <div className="shimming-box"></div>
-        <div className="shimming-box"></div>
-        <div className="shimming-box"></div>
-        <div className="shimming-box"></div>
-        <div className="shimming-box"></div>
+      <div className="flex flex-wrap gap-1">
+        <div className="  w-70 h-110 bg-gray-100 "></div>
+        <div className="  w-70 h-110 bg-gray-100"></div>
+        <div className="  w-70 h-110 bg-gray-100"></div>
+        <div className="  w-70 h-110 bg-gray-100"></div>
+        <div className="  w-70 h-110 bg-gray-100"></div>
+        <div className="  w-70 h-110 bg-gray-100"></div>
+        <div className="  w-70 h-110 bg-gray-100"></div>
+        <div className="  w-70 h-110 bg-gray-100"></div>
+        <div className="  w-70 h-110 bg-gray-100"></div>
       </div>
     </>
   );

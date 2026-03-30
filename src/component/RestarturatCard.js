@@ -14,10 +14,10 @@ const RestarturatCard = (props) => {
   } = resdata.info;
   return (
     <>
-      <div className="card-container">
-        <img src={Image_URL + cloudinaryImageId} width={200} />
-        <div className="card-body">
-          <h2 className="card-name">{name}</h2>
+      <div className="w-65 border-[1] p-5 m-1 h-110 hover:bg-gray-200">
+        <img src={Image_URL + cloudinaryImageId} className="w-70 " />
+        <div className="mt-1.5  ">
+          <h1 className="font-bold">{name}</h1>
           <h3 className="card-Category">{cuisines?.join(", ")}</h3>
           <h3 className="card-info">{description}</h3>
           <h3 className="card-Price">{costForTwo}</h3>
@@ -26,6 +26,17 @@ const RestarturatCard = (props) => {
       </div>
     </>
   );
+};
+
+export const withPromotedCard = (RestarturatCard) => {
+  return (props) => {
+    return (
+      <>
+        <label>Promoted</label>
+        <RestarturatCard {...props} />
+      </>
+    );
+  };
 };
 
 export default RestarturatCard;

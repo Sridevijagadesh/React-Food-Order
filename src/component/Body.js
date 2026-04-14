@@ -9,7 +9,7 @@ const Body = () => {
   const [resData, setResdata] = React.useState([]);
   const [filterRestroList, setFilterRestroList] = useState([]);
   const [search, setSearch] = React.useState("");
-  console.log(resData);
+
   const ResPromotedCard = withPromotedCard(RestarturatCard);
 
   useEffect(() => {
@@ -20,15 +20,15 @@ const Body = () => {
     const data = await fetch(Body_URL);
 
     const json = await data.json();
-    console.log(json);
+
     // update the state variable
     setResdata(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants,
+        ?.restaurants || [],
     );
     setFilterRestroList(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants,
+        ?.restaurants || [],
     );
   };
   //condintional rending

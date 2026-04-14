@@ -41,3 +41,10 @@ chapater 10
 Tawilwind CSS - website
 -npm run tawilwincss postcss
 .postcss puligin
+
+//14- 4-2026
+
+created Accordion
+step1: created category (header)
+step2: created Body
+step3: toggle using use state

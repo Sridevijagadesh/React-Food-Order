@@ -4,7 +4,8 @@ import Body from "./src/component/Body";
 import About from "./src/component/About";
 import Error from "./src/component/Error";
 import Contact from "./src/component/Contact";
-import MenuList from "./src/component/menuList";
+
+import RestaurantMeanList from "./src/component/RestaurantMeanList";
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
@@ -37,7 +38,7 @@ const AppRouter = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-      { path: "/restarturat/:resId", element: <MenuList /> },
+      { path: "/restarturat/:resId", element: <RestaurantMeanList /> },
       {
         path: "/grocery",
         element: (
